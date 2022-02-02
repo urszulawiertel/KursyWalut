@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C7D38EEB79125604FBD4C96 /* Pods_KursyWalut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D55E5C5EF19CDC90AC6D27 /* Pods_KursyWalut.framework */; };
+		756AA61F27A6D28400AAB465 /* ExchangeRatesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AA61E27A6D28400AAB465 /* ExchangeRatesError.swift */; };
+		757241F627A760B1001867F2 /* ExchangeRatesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757241F527A760B1001867F2 /* ExchangeRatesDetailViewController.swift */; };
+		75743A8B27A589290085DFAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75743A8A27A589290085DFAE /* AppDelegate.swift */; };
+		75743A8D27A589290085DFAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75743A8C27A589290085DFAE /* SceneDelegate.swift */; };
+		75743A8F27A589290085DFAE /* ExchangeRatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75743A8E27A589290085DFAE /* ExchangeRatesListViewController.swift */; };
+		75743A9227A589290085DFAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75743A9027A589290085DFAE /* Main.storyboard */; };
+		75743A9427A5892A0085DFAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75743A9327A5892A0085DFAE /* Assets.xcassets */; };
+		75743A9727A5892A0085DFAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75743A9527A5892A0085DFAE /* LaunchScreen.storyboard */; };
+		75743A9F27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75743A9E27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift */; };
+		7576672A27A851D400EBC3CB /* BidAskSpreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7576672927A851D400EBC3CB /* BidAskSpreadTableViewCell.swift */; };
+		7578D97327AAC01700974275 /* HistoricalExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578D97227AAC01700974275 /* HistoricalExchangeRate.swift */; };
+		758114F127A5D3ED00B7DB77 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758114F027A5D3ED00B7DB77 /* ExchangeRate.swift */; };
+		758114F427A5D81800B7DB77 /* ExchangeRatesAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758114F327A5D81800B7DB77 /* ExchangeRatesAPIController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07D55E5C5EF19CDC90AC6D27 /* Pods_KursyWalut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KursyWalut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35D2E91DEEDB79F89D1DF371 /* Pods-KursyWalut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KursyWalut.release.xcconfig"; path = "Target Support Files/Pods-KursyWalut/Pods-KursyWalut.release.xcconfig"; sourceTree = "<group>"; };
+		756AA61E27A6D28400AAB465 /* ExchangeRatesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesError.swift; sourceTree = "<group>"; };
+		757241F527A760B1001867F2 /* ExchangeRatesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesDetailViewController.swift; sourceTree = "<group>"; };
+		75743A8727A589290085DFAE /* KursyWalut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KursyWalut.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75743A8A27A589290085DFAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		75743A8C27A589290085DFAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		75743A8E27A589290085DFAE /* ExchangeRatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesListViewController.swift; sourceTree = "<group>"; };
+		75743A9127A589290085DFAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		75743A9327A5892A0085DFAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75743A9627A5892A0085DFAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		75743A9827A5892A0085DFAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75743A9E27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageExchangeRatesTableViewCell.swift; sourceTree = "<group>"; };
+		7576672927A851D400EBC3CB /* BidAskSpreadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidAskSpreadTableViewCell.swift; sourceTree = "<group>"; };
+		7578D97227AAC01700974275 /* HistoricalExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalExchangeRate.swift; sourceTree = "<group>"; };
+		758114F027A5D3ED00B7DB77 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
+		758114F327A5D81800B7DB77 /* ExchangeRatesAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesAPIController.swift; sourceTree = "<group>"; };
+		9A227C517F2DF76F7D0D2419 /* Pods-KursyWalut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KursyWalut.debug.xcconfig"; path = "Target Support Files/Pods-KursyWalut/Pods-KursyWalut.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75743A8427A589290085DFAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C7D38EEB79125604FBD4C96 /* Pods_KursyWalut.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A2532315296A08070177448 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07D55E5C5EF19CDC90AC6D27 /* Pods_KursyWalut.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75743A7E27A589290085DFAE = {
+			isa = PBXGroup;
+			children = (
+				75743A8927A589290085DFAE /* KursyWalut */,
+				75743A8827A589290085DFAE /* Products */,
+				CB7075951D0CB559DB98CCD1 /* Pods */,
+				6A2532315296A08070177448 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		75743A8827A589290085DFAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75743A8727A589290085DFAE /* KursyWalut.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75743A8927A589290085DFAE /* KursyWalut */ = {
+			isa = PBXGroup;
+			children = (
+				758114EE27A5CEE000B7DB77 /* AppDelegate */,
+				758114F227A5D7C400B7DB77 /* APIService */,
+				758114EB27A5C7DB00B7DB77 /* Models */,
+				758114ED27A5CEB100B7DB77 /* Controllers */,
+				758114EC27A5CE9100B7DB77 /* Views */,
+				758114EF27A5CF0900B7DB77 /* Resources */,
+			);
+			path = KursyWalut;
+			sourceTree = "<group>";
+		};
+		758114EB27A5C7DB00B7DB77 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				758114F027A5D3ED00B7DB77 /* ExchangeRate.swift */,
+				7578D97227AAC01700974275 /* HistoricalExchangeRate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		758114EC27A5CE9100B7DB77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75743A9E27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift */,
+				7576672927A851D400EBC3CB /* BidAskSpreadTableViewCell.swift */,
+				75743A9027A589290085DFAE /* Main.storyboard */,
+				75743A9527A5892A0085DFAE /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		758114ED27A5CEB100B7DB77 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				75743A8E27A589290085DFAE /* ExchangeRatesListViewController.swift */,
+				757241F527A760B1001867F2 /* ExchangeRatesDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		758114EE27A5CEE000B7DB77 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				75743A8A27A589290085DFAE /* AppDelegate.swift */,
+				75743A8C27A589290085DFAE /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		758114EF27A5CF0900B7DB77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75743A9327A5892A0085DFAE /* Assets.xcassets */,
+				75743A9827A5892A0085DFAE /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		758114F227A5D7C400B7DB77 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				758114F327A5D81800B7DB77 /* ExchangeRatesAPIController.swift */,
+				756AA61E27A6D28400AAB465 /* ExchangeRatesError.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		CB7075951D0CB559DB98CCD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A227C517F2DF76F7D0D2419 /* Pods-KursyWalut.debug.xcconfig */,
+				35D2E91DEEDB79F89D1DF371 /* Pods-KursyWalut.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75743A8627A589290085DFAE /* KursyWalut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75743A9B27A5892A0085DFAE /* Build configuration list for PBXNativeTarget "KursyWalut" */;
+			buildPhases = (
+				FC7505D7832FAE3C4C852FB4 /* [CP] Check Pods Manifest.lock */,
+				75743A8327A589290085DFAE /* Sources */,
+				75743A8427A589290085DFAE /* Frameworks */,
+				75743A8527A589290085DFAE /* Resources */,
+				51A425B83265AA5671B0FA62 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KursyWalut;
+			productName = KursyWalut;
+			productReference = 75743A8727A589290085DFAE /* KursyWalut.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75743A7F27A589290085DFAE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					75743A8627A589290085DFAE = {
+						CreatedOnToolsVersion = 13.2;
+					};
+				};
+			};
+			buildConfigurationList = 75743A8227A589290085DFAE /* Build configuration list for PBXProject "KursyWalut" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75743A7E27A589290085DFAE;
+			productRefGroup = 75743A8827A589290085DFAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75743A8627A589290085DFAE /* KursyWalut */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75743A8527A589290085DFAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75743A9727A5892A0085DFAE /* LaunchScreen.storyboard in Resources */,
+				75743A9427A5892A0085DFAE /* Assets.xcassets in Resources */,
+				75743A9227A589290085DFAE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51A425B83265AA5671B0FA62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KursyWalut/Pods-KursyWalut-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KursyWalut/Pods-KursyWalut-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KursyWalut/Pods-KursyWalut-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC7505D7832FAE3C4C852FB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KursyWalut-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75743A8327A589290085DFAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				758114F127A5D3ED00B7DB77 /* ExchangeRate.swift in Sources */,
+				75743A9F27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift in Sources */,
+				75743A8F27A589290085DFAE /* ExchangeRatesListViewController.swift in Sources */,
+				75743A8B27A589290085DFAE /* AppDelegate.swift in Sources */,
+				756AA61F27A6D28400AAB465 /* ExchangeRatesError.swift in Sources */,
+				758114F427A5D81800B7DB77 /* ExchangeRatesAPIController.swift in Sources */,
+				757241F627A760B1001867F2 /* ExchangeRatesDetailViewController.swift in Sources */,
+				7576672A27A851D400EBC3CB /* BidAskSpreadTableViewCell.swift in Sources */,
+				7578D97327AAC01700974275 /* HistoricalExchangeRate.swift in Sources */,
+				75743A8D27A589290085DFAE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		75743A9027A589290085DFAE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75743A9127A589290085DFAE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		75743A9527A5892A0085DFAE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75743A9627A5892A0085DFAE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75743A9927A5892A0085DFAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		75743A9A27A5892A0085DFAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75743A9C27A5892A0085DFAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A227C517F2DF76F7D0D2419 /* Pods-KursyWalut.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NKX4Y6CAJV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KursyWalut/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.urszulawiertel.KursyWalut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75743A9D27A5892A0085DFAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35D2E91DEEDB79F89D1DF371 /* Pods-KursyWalut.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NKX4Y6CAJV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KursyWalut/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.urszulawiertel.KursyWalut;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75743A8227A589290085DFAE /* Build configuration list for PBXProject "KursyWalut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75743A9927A5892A0085DFAE /* Debug */,
+				75743A9A27A5892A0085DFAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75743A9B27A5892A0085DFAE /* Build configuration list for PBXNativeTarget "KursyWalut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75743A9C27A5892A0085DFAE /* Debug */,
+				75743A9D27A5892A0085DFAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75743A7F27A589290085DFAE /* Project object */;
+}

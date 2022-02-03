@@ -35,8 +35,10 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
     @IBOutlet private weak var endDatePicker: UIDatePicker!
     @IBOutlet private weak var startLabel: UILabel!
     @IBOutlet private weak var endLabel: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     var viewModel: ExchangeRatesDetailViewModel!
+
     private let activityIndicator = UIActivityIndicatorView()
     private lazy var lineChart = LineChartView()
 
@@ -53,6 +55,9 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         }
     }
 
+    @IBAction func buttonTapped(_ sender: UISegmentedControl) {
+    }
+
     private func setupViews() {
         currencyLabel.text = viewModel.rate?.currency
         averageExchangeRateLabel.text = "1 PLN = \(viewModel.rate?.mid ?? 0) \(viewModel.rate?.code ?? "")"
@@ -66,7 +71,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         NSLayoutConstraint.activate([
             lineChart.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             lineChart.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            lineChart.topAnchor.constraint(equalTo: averageExchangeRateLabel.bottomAnchor, constant: 5),
+            lineChart.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10),
             lineChart.bottomAnchor.constraint(equalTo: startDatePicker.topAnchor, constant: -20)
         ])
     }

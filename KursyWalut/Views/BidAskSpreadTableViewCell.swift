@@ -8,9 +8,11 @@
 import UIKit
 
 struct BidAskSpreadTableViewCellViewModel {
+    let dateFormatter: DateConverting
     let rate: Rate?
-    let date: String?
-    init(rate: Rate?, date: String?) {
+    let date: Date?
+    init(dateFormatter: DateConverting, rate: Rate?, date: Date?) {
+        self.dateFormatter = dateFormatter
         self.rate = rate
         self.date = date
     }
@@ -29,7 +31,7 @@ class BidAskSpreadTableViewCell: UITableViewCell {
     func configureCell() {
         currencyLabel.text = viewModel.rate?.currency
         currencyCodeLabel.text = viewModel.rate?.code
-        dateLabel.text = viewModel.date
+        dateLabel.text = viewModel.dateFormatter.formatDate(viewModel.date ?? Date())
         bidPriceLabel.text = "\(viewModel.rate?.bid ?? 0)"
         askPriceLabel.text = "\(viewModel.rate?.ask ?? 0)"
     }

@@ -11,8 +11,8 @@ typealias ExchangeRateNBP = [ExchangeRate]
 
 struct ExchangeRate: Codable {
     let table: String?
-    let tradingDate: String?
-    let effectiveDate: String?
+    let tradingDate: Date?
+    let effectiveDate: Date?
     let rates: [Rate]
 }
 

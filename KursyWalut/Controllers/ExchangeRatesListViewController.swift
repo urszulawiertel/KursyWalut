@@ -13,6 +13,8 @@ final class ExchangeRatesListViewController: UIViewController {
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
 
     private let apiController: ExchangeRatesAPIControlling = ExchangeRatesAPIController()
+    private let dateFormatter = DateConverter(inputDateFormatter: .defaultDateFormatter,
+                                              outputDateFormatter: .dayMonthYearDateFormatter)
     private var exchangeRates: [ExchangeRate]?
     private var tableType = TableType.major.queryParameter
 
@@ -73,7 +75,7 @@ extension ExchangeRatesListViewController: UITableViewDataSource {
         if segmentedControl.selectedSegmentIndex == 2 {
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(withIdentifier: "BidAskSpreadTableViewCell", for: indexPath) as! BidAskSpreadTableViewCell
-            let tableViewCellViewModel = BidAskSpreadTableViewCellViewModel(rate: item, date: effectiveDate)
+            let tableViewCellViewModel = BidAskSpreadTableViewCellViewModel(dateFormatter: dateFormatter, rate: item, date: effectiveDate)
             cell.viewModel = tableViewCellViewModel
 
             cell.configureCell()
@@ -81,7 +83,7 @@ extension ExchangeRatesListViewController: UITableViewDataSource {
         } else {
             // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(withIdentifier: "AverageExchangeRatesTableViewCell", for: indexPath) as! AverageExchangeRatesTableViewCell
-            let tableViewCellViewModel = AverageExchangeRatesTableViewCellViewModel(rate: item, date: effectiveDate)
+            let tableViewCellViewModel = AverageExchangeRatesTableViewCellViewModel(dateFormatter: dateFormatter, rate: item, date: effectiveDate)
             cell.viewModel = tableViewCellViewModel
 
             cell.configureCell()
@@ -100,7 +102,7 @@ extension ExchangeRatesListViewController: UITableViewDelegate {
             let item = exchangeRates?[0].rates[indexPath.row]
             let table = exchangeRates?[0].table
             let tradingDate = exchangeRates?[0].tradingDate
-            let detailViewModel = ExchangeRatesDetailViewModel(rate: item, date: tradingDate, table: table)
+            let detailViewModel = ExchangeRatesDetailViewModel(dateFormatter: dateFormatter, rate: item, date: tradingDate, table: table)
             detailViewController.viewModel = detailViewModel
 
             navigationController?.pushViewController(detailViewController, animated: true)

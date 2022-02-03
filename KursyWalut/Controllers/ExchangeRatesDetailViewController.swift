@@ -10,15 +10,18 @@ import Charts
 
 struct ExchangeRatesDetailViewModel {
     let apiController: ExchangeRatesAPIControlling
+    let dateFormatter: DateConverting
     let rate: Rate?
-    let date: String?
+    let date: Date?
     let table: String?
     var historicalRates: HistoricalExchangeRate?
     init(apiController: ExchangeRatesAPIControlling = ExchangeRatesAPIController(),
+         dateFormatter: DateConverting,
          rate: Rate?,
-         date: String?,
+         date: Date?,
          table: String?) {
         self.apiController = apiController
+        self.dateFormatter = dateFormatter
         self.rate = rate
         self.date = date
         self.table = table
@@ -115,18 +118,26 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
     }
 
     private func updateLineChart() {
+
+        let xAxis = lineChart.xAxis
+        xAxis.labelPosition = .bottom
+
+        let xValuesNumberFormatter = ChartXAxisFormatter()
+        xAxis.valueFormatter = xValuesNumberFormatter
+
+        guard let rates = viewModel.historicalRates?.rates else { return }
         var entries = [ChartDataEntry]()
+        rates.forEach({ rate in
+            guard let date = rate.effectiveDate, let price = rate.mid else {return}
+            let timeInterval = date.timeIntervalSince1970
+            entries.append(ChartDataEntry(x: timeInterval, y: price))
+        })
+        xAxis.labelCount = entries.count
 
-        for item in viewModel.historicalRates?.rates ?? [] {
-            entries.append(ChartDataEntry(x: item.mid ?? 0, y: item.mid ?? 0))
-        }
+        let dataSet =  LineChartDataSet(entries: entries)
+        dataSet.valueTextColor = .white
+        lineChart.data = LineChartData(dataSet: dataSet)
+        lineChart.legend.textColor = .white
 
-        let set = LineChartDataSet(entries: entries)
-
-        let data = LineChartData(dataSet: set)
-
-        lineChart.xAxis.labelPosition = .bottom
-        lineChart.data = data
     }
-
 }

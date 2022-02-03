@@ -19,6 +19,8 @@
 		75743A9F27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75743A9E27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift */; };
 		7576672A27A851D400EBC3CB /* BidAskSpreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7576672927A851D400EBC3CB /* BidAskSpreadTableViewCell.swift */; };
 		7578D97327AAC01700974275 /* HistoricalExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578D97227AAC01700974275 /* HistoricalExchangeRate.swift */; };
+		757DCF4427AC50410014D351 /* ChartXAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757DCF4327AC50410014D351 /* ChartXAxisFormatter.swift */; };
+		757DCF4627AC5C880014D351 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757DCF4527AC5C880014D351 /* DateConverter.swift */; };
 		758114F127A5D3ED00B7DB77 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758114F027A5D3ED00B7DB77 /* ExchangeRate.swift */; };
 		758114F427A5D81800B7DB77 /* ExchangeRatesAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758114F327A5D81800B7DB77 /* ExchangeRatesAPIController.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 		75743A9E27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageExchangeRatesTableViewCell.swift; sourceTree = "<group>"; };
 		7576672927A851D400EBC3CB /* BidAskSpreadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidAskSpreadTableViewCell.swift; sourceTree = "<group>"; };
 		7578D97227AAC01700974275 /* HistoricalExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalExchangeRate.swift; sourceTree = "<group>"; };
+		757DCF4327AC50410014D351 /* ChartXAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisFormatter.swift; sourceTree = "<group>"; };
+		757DCF4527AC5C880014D351 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		758114F027A5D3ED00B7DB77 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		758114F327A5D81800B7DB77 /* ExchangeRatesAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesAPIController.swift; sourceTree = "<group>"; };
 		9A227C517F2DF76F7D0D2419 /* Pods-KursyWalut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KursyWalut.debug.xcconfig"; path = "Target Support Files/Pods-KursyWalut/Pods-KursyWalut.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,9 +94,19 @@
 				758114EB27A5C7DB00B7DB77 /* Models */,
 				758114ED27A5CEB100B7DB77 /* Controllers */,
 				758114EC27A5CE9100B7DB77 /* Views */,
+				757DCF4227AC4FE70014D351 /* Utilities */,
 				758114EF27A5CF0900B7DB77 /* Resources */,
 			);
 			path = KursyWalut;
+			sourceTree = "<group>";
+		};
+		757DCF4227AC4FE70014D351 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				757DCF4327AC50410014D351 /* ChartXAxisFormatter.swift */,
+				757DCF4527AC5C880014D351 /* DateConverter.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		758114EB27A5C7DB00B7DB77 /* Models */ = {
@@ -297,10 +311,12 @@
 				758114F127A5D3ED00B7DB77 /* ExchangeRate.swift in Sources */,
 				75743A9F27A592D80085DFAE /* AverageExchangeRatesTableViewCell.swift in Sources */,
 				75743A8F27A589290085DFAE /* ExchangeRatesListViewController.swift in Sources */,
+				757DCF4427AC50410014D351 /* ChartXAxisFormatter.swift in Sources */,
 				75743A8B27A589290085DFAE /* AppDelegate.swift in Sources */,
 				756AA61F27A6D28400AAB465 /* ExchangeRatesError.swift in Sources */,
 				758114F427A5D81800B7DB77 /* ExchangeRatesAPIController.swift in Sources */,
 				757241F627A760B1001867F2 /* ExchangeRatesDetailViewController.swift in Sources */,
+				757DCF4627AC5C880014D351 /* DateConverter.swift in Sources */,
 				7576672A27A851D400EBC3CB /* BidAskSpreadTableViewCell.swift in Sources */,
 				7578D97327AAC01700974275 /* HistoricalExchangeRate.swift in Sources */,
 				75743A8D27A589290085DFAE /* SceneDelegate.swift in Sources */,

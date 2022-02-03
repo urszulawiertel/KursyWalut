@@ -8,9 +8,11 @@
 import UIKit
 
 struct AverageExchangeRatesTableViewCellViewModel {
+    let dateFormatter: DateConverting
     let rate: Rate?
-    let date: String?
-    init(rate: Rate?, date: String?) {
+    let date: Date?
+    init(dateFormatter: DateConverting, rate: Rate?, date: Date?) {
+        self.dateFormatter = dateFormatter
         self.rate = rate
         self.date = date
     }
@@ -28,7 +30,8 @@ class AverageExchangeRatesTableViewCell: UITableViewCell {
     func configureCell() {
         currencyLabel.text = viewModel.rate?.currency
         currencyCodeLabel.text = viewModel.rate?.code
-        dateLabel.text = viewModel.date
+        dateLabel.text = viewModel.dateFormatter.formatDate(viewModel.date ?? Date())
+//        dateLabel.text = "\(viewModel.date ?? Date())"
         averageExchangeRateLabel.text = "\(viewModel.rate?.mid ?? 0)"
     }
 

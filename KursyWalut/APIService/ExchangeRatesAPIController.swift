@@ -25,6 +25,9 @@ struct ExchangeRatesAPIController: ExchangeRatesAPIControlling {
 
     private func decode<T: Decodable>(model: T.Type, data: Data) throws -> T {
         let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
         let decodedData = try decoder.decode(model.self, from: data)
         return decodedData
     }

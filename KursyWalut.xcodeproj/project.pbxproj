@@ -168,6 +168,7 @@
 			buildConfigurationList = 75743A9B27A5892A0085DFAE /* Build configuration list for PBXNativeTarget "KursyWalut" */;
 			buildPhases = (
 				FC7505D7832FAE3C4C852FB4 /* [CP] Check Pods Manifest.lock */,
+				75161E9327AB43950008457C /* Run SwiftLint */,
 				75743A8327A589290085DFAE /* Sources */,
 				75743A8427A589290085DFAE /* Frameworks */,
 				75743A8527A589290085DFAE /* Resources */,
@@ -245,6 +246,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KursyWalut/Pods-KursyWalut-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		75161E9327AB43950008457C /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		FC7505D7832FAE3C4C852FB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

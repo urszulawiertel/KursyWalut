@@ -25,7 +25,18 @@ struct Rate: Codable {
 }
 
 enum TableType: String {
-    case a
-    case b
-    case c
+    case major
+    case minor
+    case bidAsk
+
+    var queryParameter: String {
+        switch self {
+        case .major:
+            return "a"
+        case .minor:
+            return "b"
+        case .bidAsk:
+            return "c"
+        }
+    }
 }

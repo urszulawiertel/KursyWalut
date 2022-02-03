@@ -14,7 +14,7 @@ final class ExchangeRatesListViewController: UIViewController {
 
     private let apiController: ExchangeRatesAPIControlling = ExchangeRatesAPIController()
     private var exchangeRates: [ExchangeRate]?
-    private var tableType = TableType.a.rawValue
+    private var tableType = TableType.major.queryParameter
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +26,15 @@ final class ExchangeRatesListViewController: UIViewController {
         loadCurrencyRates()
     }
 
-
     @objc private func handleTable() {
 
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            tableType = TableType.a.rawValue
+            tableType = TableType.major.queryParameter
         case 1:
-            tableType = TableType.b.rawValue
+            tableType = TableType.minor.queryParameter
         default:
-            tableType = TableType.c.rawValue
+            tableType = TableType.bidAsk.queryParameter
         }
 
         loadCurrencyRates()
@@ -71,8 +70,8 @@ extension ExchangeRatesListViewController: UITableViewDataSource {
         let item = exchangeRates?[0].rates[indexPath.row]
         let effectiveDate = exchangeRates?[0].effectiveDate
 
-        
         if segmentedControl.selectedSegmentIndex == 2 {
+            // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(withIdentifier: "BidAskSpreadTableViewCell", for: indexPath) as! BidAskSpreadTableViewCell
             let tableViewCellViewModel = BidAskSpreadTableViewCellViewModel(rate: item, date: effectiveDate)
             cell.viewModel = tableViewCellViewModel
@@ -80,6 +79,7 @@ extension ExchangeRatesListViewController: UITableViewDataSource {
             cell.configureCell()
             return cell
         } else {
+            // swiftlint:disable force_cast
             let cell = tableView.dequeueReusableCell(withIdentifier: "AverageExchangeRatesTableViewCell", for: indexPath) as! AverageExchangeRatesTableViewCell
             let tableViewCellViewModel = AverageExchangeRatesTableViewCellViewModel(rate: item, date: effectiveDate)
             cell.viewModel = tableViewCellViewModel
@@ -102,7 +102,7 @@ extension ExchangeRatesListViewController: UITableViewDelegate {
             let tradingDate = exchangeRates?[0].tradingDate
             let detailViewModel = ExchangeRatesDetailViewModel(rate: item, date: tradingDate, table: table)
             detailViewController.viewModel = detailViewModel
-            
+
             navigationController?.pushViewController(detailViewController, animated: true)
         }
     }

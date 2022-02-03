@@ -89,7 +89,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         viewModel.apiController.fetchHistoricalExchangeRates(forType: table,
                                                   forCurrency: code,
                                                   from: startDate,
-                                                  to: endDate){ [weak self] result in
+                                                  to: endDate) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
@@ -105,7 +105,6 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
                 }
             case .failure(let error):
                 print(error)
-                break
             }
         }
     }

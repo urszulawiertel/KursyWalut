@@ -15,7 +15,6 @@ struct HistoricalExchangeRate: Codable {
 }
 
 struct IndividualRate: Codable {
-    let no: String?
     let effectiveDate: Date?
     let mid: Double?
 }

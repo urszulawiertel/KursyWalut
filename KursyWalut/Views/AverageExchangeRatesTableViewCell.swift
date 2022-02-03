@@ -31,7 +31,6 @@ class AverageExchangeRatesTableViewCell: UITableViewCell {
         currencyLabel.text = viewModel.rate?.currency
         currencyCodeLabel.text = viewModel.rate?.code
         dateLabel.text = viewModel.dateFormatter.formatDate(viewModel.date ?? Date())
-//        dateLabel.text = "\(viewModel.date ?? Date())"
         averageExchangeRateLabel.text = "\(viewModel.rate?.mid ?? 0)"
     }
 

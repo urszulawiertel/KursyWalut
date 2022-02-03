@@ -60,7 +60,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
 
     private func setupViews() {
         currencyLabel.text = viewModel.rate?.currency
-        averageExchangeRateLabel.text = "1 PLN = \(viewModel.rate?.mid ?? 0) \(viewModel.rate?.code ?? "")"
+        averageExchangeRateLabel.text = "1 \(viewModel.rate?.code ?? "") = \(viewModel.rate?.mid ?? 0) PLN"
         lineChart.isHidden = true
     }
 

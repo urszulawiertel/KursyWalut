@@ -224,7 +224,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dgP-Zl-KeL">
-                                <rect key="frame" x="0.0" y="124" width="414" height="32"/>
+                                <rect key="frame" x="10" y="124" width="394" height="32"/>
                                 <segments>
                                     <segment title="7 DNI"/>
                                     <segment title="30 DNI"/>
@@ -239,6 +239,10 @@
                                 <rect key="frame" x="95" y="801" width="200" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xg4-yi-4iL" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="10" y="170" width="394" height="522"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U3L-iB-iNc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -246,17 +250,21 @@
                             <constraint firstItem="U3L-iB-iNc" firstAttribute="trailing" secondItem="Q6V-u3-NDj" secondAttribute="trailing" constant="60" id="26n-Yg-6lN"/>
                             <constraint firstItem="dgP-Zl-KeL" firstAttribute="top" secondItem="L7O-Gw-CTh" secondAttribute="bottom" constant="15" id="6DB-ab-auT"/>
                             <constraint firstItem="U3L-iB-iNc" firstAttribute="bottom" secondItem="Q6V-u3-NDj" secondAttribute="bottom" constant="40" id="AyA-Ph-h23"/>
-                            <constraint firstItem="U3L-iB-iNc" firstAttribute="trailing" secondItem="dgP-Zl-KeL" secondAttribute="trailing" id="IWf-yA-Gv0"/>
+                            <constraint firstItem="U3L-iB-iNc" firstAttribute="trailing" secondItem="dgP-Zl-KeL" secondAttribute="trailing" constant="10" id="IWf-yA-Gv0"/>
                             <constraint firstItem="U3L-iB-iNc" firstAttribute="trailing" secondItem="L7O-Gw-CTh" secondAttribute="trailing" id="LxL-eN-JsV"/>
                             <constraint firstItem="Zha-ty-YyT" firstAttribute="leading" secondItem="U3L-iB-iNc" secondAttribute="leading" constant="60" id="Mnk-Ts-n2E"/>
+                            <constraint firstItem="Xg4-yi-4iL" firstAttribute="trailing" secondItem="U3L-iB-iNc" secondAttribute="trailing" constant="-10" id="OQ3-Np-wM4"/>
                             <constraint firstItem="Q6V-u3-NDj" firstAttribute="top" secondItem="Zha-ty-YyT" secondAttribute="bottom" constant="15" id="P7H-ge-7c4"/>
+                            <constraint firstItem="Xg4-yi-4iL" firstAttribute="top" secondItem="dgP-Zl-KeL" secondAttribute="bottom" constant="15" id="Rbd-nj-VSh"/>
                             <constraint firstItem="wCX-wM-Kay" firstAttribute="leading" secondItem="U3L-iB-iNc" secondAttribute="leading" id="UZW-On-KYe"/>
+                            <constraint firstItem="Xg4-yi-4iL" firstAttribute="leading" secondItem="U3L-iB-iNc" secondAttribute="leading" constant="10" id="UeJ-om-5Y7"/>
                             <constraint firstItem="wCX-wM-Kay" firstAttribute="top" secondItem="U3L-iB-iNc" secondAttribute="top" constant="15" id="YSA-9d-Tlu"/>
                             <constraint firstItem="U3L-iB-iNc" firstAttribute="trailing" secondItem="wCX-wM-Kay" secondAttribute="trailing" id="avC-Qr-LAO"/>
-                            <constraint firstItem="dgP-Zl-KeL" firstAttribute="leading" secondItem="U3L-iB-iNc" secondAttribute="leading" id="gvK-c5-e56"/>
+                            <constraint firstItem="dgP-Zl-KeL" firstAttribute="leading" secondItem="U3L-iB-iNc" secondAttribute="leading" constant="10" id="gvK-c5-e56"/>
                             <constraint firstItem="Q6V-u3-NDj" firstAttribute="leading" secondItem="U3L-iB-iNc" secondAttribute="leading" constant="60" id="lGf-kf-zWi"/>
                             <constraint firstAttribute="trailing" secondItem="Zha-ty-YyT" secondAttribute="trailing" constant="60" id="n5V-21-Ge3"/>
                             <constraint firstItem="L7O-Gw-CTh" firstAttribute="top" secondItem="wCX-wM-Kay" secondAttribute="bottom" constant="10" id="thr-rh-bhj"/>
+                            <constraint firstItem="Zha-ty-YyT" firstAttribute="top" secondItem="Xg4-yi-4iL" secondAttribute="bottom" constant="15" id="uUE-E6-fVI"/>
                             <constraint firstItem="L7O-Gw-CTh" firstAttribute="leading" secondItem="U3L-iB-iNc" secondAttribute="leading" id="x3L-nH-lTI"/>
                         </constraints>
                     </view>
@@ -265,6 +273,7 @@
                         <outlet property="currencyLabel" destination="wCX-wM-Kay" id="aVd-gE-OWg"/>
                         <outlet property="endDatePicker" destination="4ea-wa-atp" id="DPy-nI-x2G"/>
                         <outlet property="endLabel" destination="2UV-RL-bqk" id="JM7-RC-lVy"/>
+                        <outlet property="lineChart" destination="Xg4-yi-4iL" id="Hq8-yd-Mgr"/>
                         <outlet property="segmentedControl" destination="dgP-Zl-KeL" id="CwV-mD-rSo"/>
                         <outlet property="startDatePicker" destination="jVi-td-ISs" id="D7q-qI-14P"/>
                         <outlet property="startLabel" destination="E6k-fS-rqx" id="jJc-Mo-N74"/>

@@ -31,25 +31,22 @@ struct ExchangeRatesDetailViewModel {
 class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
 
     @IBOutlet private weak var currencyLabel: UILabel!
-    @IBOutlet private weak var currencyCodeLabel: UILabel!
-    @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var averageExchangeRateLabel: UILabel!
     @IBOutlet private weak var startDatePicker: UIDatePicker!
     @IBOutlet private weak var endDatePicker: UIDatePicker!
     @IBOutlet private weak var startLabel: UILabel!
     @IBOutlet private weak var endLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-
+    @IBOutlet private weak var lineChart: LineChartView!
     var viewModel: ExchangeRatesDetailViewModel!
 
     private let activityIndicator = UIActivityIndicatorView()
-    private lazy var lineChart = LineChartView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDataEntries()
         setupViews()
-        setupLineChartView()
+        setupLineChart()
         configureActivityIndicator()
         lineChart.delegate = self
 
@@ -67,18 +64,6 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         lineChart.isHidden = true
     }
 
-    private func setupLineChartView() {
-        lineChart.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(lineChart)
-
-        NSLayoutConstraint.activate([
-            lineChart.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            lineChart.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            lineChart.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10),
-            lineChart.bottomAnchor.constraint(equalTo: startDatePicker.topAnchor, constant: -20)
-        ])
-    }
-
     private func configureActivityIndicator() {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +74,6 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
     }
 
     private func loadDataEntries() {
-
         guard let table = viewModel.table, let code = viewModel.rate?.code else { return }
         let startDate = "2022-01-20"
         let endDate = "2022-01-30"
@@ -117,13 +101,22 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         }
     }
 
-    private func updateLineChart() {
-
+    private func setupLineChart() {
         let xAxis = lineChart.xAxis
         xAxis.labelPosition = .bottom
+        xAxis.setLabelCount(5, force: true)
+
+        let leftAxis = lineChart.leftAxis
+        leftAxis.setLabelCount(5, force: false)
+
+        let rightAxis = lineChart.rightAxis
+        rightAxis.setLabelCount(5, force: false)
 
         let xValuesNumberFormatter = ChartXAxisFormatter()
         xAxis.valueFormatter = xValuesNumberFormatter
+    }
+
+    private func updateLineChart() {
 
         guard let rates = viewModel.historicalRates?.rates else { return }
         var entries = [ChartDataEntry]()
@@ -132,12 +125,12 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
             let timeInterval = date.timeIntervalSince1970
             entries.append(ChartDataEntry(x: timeInterval, y: price))
         })
-        xAxis.labelCount = entries.count
 
-        let dataSet =  LineChartDataSet(entries: entries)
-        dataSet.valueTextColor = .white
+        let dataSet = LineChartDataSet(entries: entries)
+        dataSet.drawCirclesEnabled = false
+        dataSet.setColor(.systemBlue)
         lineChart.data = LineChartData(dataSet: dataSet)
+        lineChart.data?.setDrawValues(false)
         lineChart.legend.textColor = .white
-
     }
 }

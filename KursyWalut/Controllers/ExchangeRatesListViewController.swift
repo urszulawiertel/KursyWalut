@@ -11,6 +11,7 @@ final class ExchangeRatesListViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    private let refreshControl = UIRefreshControl()
 
     private let apiController: ExchangeRatesAPIControlling = ExchangeRatesAPIController()
     private let dateFormatter = DateConverter(inputDateFormatter: .defaultDateFormatter,
@@ -23,7 +24,10 @@ final class ExchangeRatesListViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.refreshControl = refreshControl
+        refreshControl.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         segmentedControl.addTarget(self, action: #selector(handleTable), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
 
         loadCurrencyRates()
     }
@@ -38,14 +42,20 @@ final class ExchangeRatesListViewController: UIViewController {
         default:
             tableType = TableType.bidAsk.queryParameter
         }
-
         loadCurrencyRates()
+    }
 
+    @objc private func refreshTable() {
+        loadCurrencyRates()
     }
 
     private func loadCurrencyRates() {
         apiController.fetchExchangeRates(forType: tableType) { [weak self] result in
             guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+            }
+
             switch result {
             case .success(let exchangeRates):
                 self.exchangeRates = exchangeRates
@@ -89,9 +99,7 @@ extension ExchangeRatesListViewController: UITableViewDataSource {
             cell.configureCell()
             return cell
         }
-
     }
-
 }
 
 extension ExchangeRatesListViewController: UITableViewDelegate {

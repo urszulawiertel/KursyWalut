@@ -36,7 +36,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
     @IBOutlet private weak var endDatePicker: UIDatePicker!
     @IBOutlet private weak var startLabel: UILabel!
     @IBOutlet private weak var endLabel: UILabel!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var lineChart: LineChartView!
     var viewModel: ExchangeRatesDetailViewModel!
 
@@ -60,7 +60,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
 
     private func setupViews() {
         currencyLabel.text = viewModel.rate?.currency
-        averageExchangeRateLabel.text = "1 \(viewModel.rate?.code ?? "") = \(viewModel.rate?.mid ?? 0) PLN"
+        averageExchangeRateLabel.text = "1 \(viewModel.rate?.code ?? "") = \(viewModel.rate?.mid ?? viewModel.rate?.average ?? 0) PLN"
         lineChart.isHidden = true
     }
 
@@ -121,9 +121,9 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         guard let rates = viewModel.historicalRates?.rates else { return }
         var entries = [ChartDataEntry]()
         rates.forEach({ rate in
-            guard let date = rate.effectiveDate, let price = rate.mid else {return}
+            guard let date = rate.effectiveDate else { return }
             let timeInterval = date.timeIntervalSince1970
-            entries.append(ChartDataEntry(x: timeInterval, y: price))
+            entries.append(ChartDataEntry(x: timeInterval, y: (rate.mid ?? rate.average) ?? 0))
         })
 
         let dataSet = LineChartDataSet(entries: entries)

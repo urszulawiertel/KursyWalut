@@ -22,6 +22,10 @@ struct Rate: Codable {
     let mid: Double?
     let bid: Double?
     let ask: Double?
+
+    var average: Double? {
+        return ((bid ?? 0) + (ask ?? 0)) / 2
+    }
 }
 
 enum TableType: String {

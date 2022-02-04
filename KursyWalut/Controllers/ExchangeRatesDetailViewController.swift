@@ -44,10 +44,11 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDataEntries()
         setupViews()
         setupLineChart()
+        setupDatePicker()
         configureActivityIndicator()
+        loadDataEntries()
         lineChart.delegate = self
 
         if #available(iOS 11.0, *) {
@@ -56,6 +57,13 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
     }
 
     @IBAction func buttonTapped(_ sender: UISegmentedControl) {
+    }
+
+    @IBAction func startDateChanged(_ sender: UIDatePicker) {
+        loadDataEntries()
+    }
+    @IBAction func endDateChanged(_ sender: UIDatePicker) {
+        loadDataEntries()
     }
 
     private func setupViews() {
@@ -73,10 +81,24 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         activityIndicator.centerYAnchor.constraint(equalTo: lineChart.centerYAnchor).isActive = true
     }
 
+    private func setupDatePicker() {
+        let apiLimit = 367
+        let today = Date()
+
+        startDatePicker.minimumDate = viewModel.dateFormatter.getPastDate(daysAgo: apiLimit)
+        startDatePicker.maximumDate = today
+        startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: 7) ?? Date()
+
+        endDatePicker.minimumDate = viewModel.dateFormatter.getPastDate(daysAgo: apiLimit)
+        endDatePicker.maximumDate = today
+        endDatePicker.date = today
+    }
+
     private func loadDataEntries() {
         guard let table = viewModel.table, let code = viewModel.rate?.code else { return }
-        let startDate = "2022-01-20"
-        let endDate = "2022-01-30"
+        let startDate = viewModel.dateFormatter.formatDate(startDatePicker.date) ?? ""
+        let endDate = viewModel.dateFormatter.formatDate(endDatePicker.date) ?? ""
+
         activityIndicator.startAnimating()
         viewModel.apiController.fetchHistoricalExchangeRates(forType: table,
                                                   forCurrency: code,

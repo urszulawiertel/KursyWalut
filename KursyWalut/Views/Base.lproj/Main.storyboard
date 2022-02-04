@@ -193,12 +193,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVi-td-ISs">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="jVi-td-ISs">
                                         <rect key="frame" x="59.5" y="0.0" width="234.5" height="50"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="665447563.80627">
-                                            <!--2022-02-01 22:32:43 +0000-->
-                                        </date>
                                         <locale key="locale" localeIdentifier="pl"/>
+                                        <connections>
+                                            <action selector="startDateChanged:" destination="Xng-53-jGz" eventType="valueChanged" id="KeN-Vg-uUs"/>
+                                        </connections>
                                     </datePicker>
                                 </subviews>
                             </stackView>
@@ -214,6 +214,9 @@
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="4ea-wa-atp">
                                         <rect key="frame" x="44" y="0.0" width="250" height="50"/>
                                         <locale key="locale" localeIdentifier="pl_PL"/>
+                                        <connections>
+                                            <action selector="endDateChanged:" destination="Xng-53-jGz" eventType="valueChanged" id="CWV-nA-5vh"/>
+                                        </connections>
                                     </datePicker>
                                 </subviews>
                             </stackView>

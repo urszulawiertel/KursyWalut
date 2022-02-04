@@ -9,6 +9,7 @@ import Foundation
 
 protocol DateConverting {
     func formatDate(_ date: Date) -> String?
+    func getPastDate(daysAgo days: Int) -> Date?
 }
 
 struct DateConverter: DateConverting {
@@ -26,6 +27,11 @@ struct DateConverter: DateConverting {
     /// - Returns: Returns a string converted to a given date format.
     func formatDate(_ date: Date) -> String? {
         outputDateFormatter.string(from: date)
+    }
+
+    func getPastDate(daysAgo days: Int) -> Date? {
+        let currentCalendar = Calendar.current
+        return currentCalendar.date(byAdding: .day, value: -days, to: Date())
     }
 }
 

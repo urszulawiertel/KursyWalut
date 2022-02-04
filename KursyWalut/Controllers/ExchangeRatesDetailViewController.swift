@@ -47,6 +47,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         setupViews()
         setupLineChart()
         setupDatePicker()
+        setupRightBarButton()
         configureActivityIndicator()
         loadDataEntries()
         lineChart.delegate = self
@@ -70,6 +71,12 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         currencyLabel.text = viewModel.rate?.currency
         averageExchangeRateLabel.text = "1 \(viewModel.rate?.code ?? "") = \(viewModel.rate?.mid ?? viewModel.rate?.average ?? 0) PLN"
         lineChart.isHidden = true
+    }
+
+    private func setupRightBarButton() {
+        let refreshBarItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshLineChart))
+
+        navigationItem.rightBarButtonItem = refreshBarItem
     }
 
     private func configureActivityIndicator() {
@@ -99,6 +106,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         let startDate = viewModel.dateFormatter.formatDate(startDatePicker.date) ?? ""
         let endDate = viewModel.dateFormatter.formatDate(endDatePicker.date) ?? ""
 
+        lineChart.isHidden = true
         activityIndicator.startAnimating()
         viewModel.apiController.fetchHistoricalExchangeRates(forType: table,
                                                   forCurrency: code,
@@ -107,6 +115,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
+                self.lineChart.isHidden = false
             }
             switch result {
             case .success(let exchangeRates):
@@ -154,5 +163,10 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         lineChart.data = LineChartData(dataSet: dataSet)
         lineChart.data?.setDrawValues(false)
         lineChart.legend.textColor = .white
+    }
+
+    @objc private func refreshLineChart() {
+        loadDataEntries()
+        updateLineChart()
     }
 }

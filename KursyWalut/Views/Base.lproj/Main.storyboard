@@ -232,10 +232,10 @@
                                     <segment title="7 DNI"/>
                                     <segment title="30 DNI"/>
                                     <segment title="90 DNI"/>
-                                    <segment title="180 DNI"/>
+                                    <segment title="360 DNI"/>
                                 </segments>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="Xng-53-jGz" eventType="valueChanged" id="JlT-bK-60R"/>
+                                    <action selector="segmentChanged:" destination="Xng-53-jGz" eventType="valueChanged" id="f9n-U5-ocR"/>
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zu9-Ri-lee">

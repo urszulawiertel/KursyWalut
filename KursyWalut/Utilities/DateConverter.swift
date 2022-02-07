@@ -9,7 +9,7 @@ import Foundation
 
 protocol DateConverting {
     func formatDate(_ date: Date) -> String?
-    func getPastDate(daysAgo days: Int) -> Date?
+    func getPastDate(daysAgo days: Int) -> Date
 }
 
 struct DateConverter: DateConverting {
@@ -29,9 +29,9 @@ struct DateConverter: DateConverting {
         outputDateFormatter.string(from: date)
     }
 
-    func getPastDate(daysAgo days: Int) -> Date? {
+    func getPastDate(daysAgo days: Int) -> Date {
         let currentCalendar = Calendar.current
-        return currentCalendar.date(byAdding: .day, value: -days, to: Date())
+        return currentCalendar.date(byAdding: .day, value: -days, to: Date()) ?? Date()
     }
 }
 
@@ -44,7 +44,7 @@ extension DateFormatter {
     }
 
     /// Returns a date in the following format:  the 4-digit year, numeric month and numeric day of the month.
-    /// Example: 30-12-2021.
+    /// Example: 2022-02-07.
     static var dayMonthYearDateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

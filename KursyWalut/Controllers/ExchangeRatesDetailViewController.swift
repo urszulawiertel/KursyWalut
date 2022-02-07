@@ -42,6 +42,13 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
 
     private let activityIndicator = UIActivityIndicatorView()
 
+    private enum DateRange: Int {
+        case week = 7
+        case month = 30
+        case quarter = 90
+        case year = 360
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -57,13 +64,24 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         }
     }
 
-    @IBAction func buttonTapped(_ sender: UISegmentedControl) {
+    @IBAction private func segmentChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: DateRange.week.rawValue)
+        case 1:
+            startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: DateRange.month.rawValue)
+        case 2:
+            startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: DateRange.quarter.rawValue)
+        default:
+            startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: DateRange.year.rawValue)
+        }
+        refreshLineChart()
     }
 
-    @IBAction func startDateChanged(_ sender: UIDatePicker) {
+    @IBAction private func startDateChanged(_ sender: UIDatePicker) {
         loadDataEntries()
     }
-    @IBAction func endDateChanged(_ sender: UIDatePicker) {
+    @IBAction private func endDateChanged(_ sender: UIDatePicker) {
         loadDataEntries()
     }
 
@@ -94,7 +112,7 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
 
         startDatePicker.minimumDate = viewModel.dateFormatter.getPastDate(daysAgo: apiLimit)
         startDatePicker.maximumDate = today
-        startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: 7) ?? Date()
+        startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: DateRange.week.rawValue)
 
         endDatePicker.minimumDate = viewModel.dateFormatter.getPastDate(daysAgo: apiLimit)
         endDatePicker.maximumDate = today

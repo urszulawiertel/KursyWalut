@@ -36,11 +36,11 @@ enum TableType: String {
     var queryParameter: String {
         switch self {
         case .major:
-            return "a"
+            return "A"
         case .minor:
-            return "b"
+            return "B"
         case .bidAsk:
-            return "c"
+            return "C"
         }
     }
 }

@@ -65,7 +65,11 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
     }
 
     @IBAction private func segmentChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
+        var selectedIndex = sender.selectedSegmentIndex
+        if viewModel.table == TableType.minor.queryParameter {
+            selectedIndex += 1
+        }
+        switch selectedIndex {
         case 0:
             startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: DateRange.week.rawValue)
         case 1:
@@ -121,6 +125,12 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
 
     private func loadDataEntries() {
         guard let table = viewModel.table, let code = viewModel.rate?.code else { return }
+        if table == TableType.minor.queryParameter && segmentedControl.titleForSegment(at: 0) == "7 DNI" {
+            segmentedControl.removeSegment(at: 0, animated: true)
+            segmentedControl.selectedSegmentIndex = 2
+            startDatePicker.date = viewModel.dateFormatter.getPastDate(daysAgo: DateRange.year.rawValue)
+        }
+
         let startDate = viewModel.dateFormatter.formatDate(startDatePicker.date) ?? ""
         let endDate = viewModel.dateFormatter.formatDate(endDatePicker.date) ?? ""
 

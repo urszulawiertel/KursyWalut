@@ -137,9 +137,9 @@ class ExchangeRatesDetailViewController: UIViewController, ChartViewDelegate {
         lineChart.isHidden = true
         activityIndicator.startAnimating()
         viewModel.apiController.fetchHistoricalExchangeRates(forType: table,
-                                                  forCurrency: code,
-                                                  from: startDate,
-                                                  to: endDate) { [weak self] result in
+                                                             forCurrency: code,
+                                                             from: startDate,
+                                                             to: endDate) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C7D38EEB79125604FBD4C96 /* Pods_KursyWalut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D55E5C5EF19CDC90AC6D27 /* Pods_KursyWalut.framework */; };
+		751BFECD2B62BB5400BB94C8 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 751BFECC2B62BB5400BB94C8 /* DGCharts */; };
 		756AA61F27A6D28400AAB465 /* ExchangeRatesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AA61E27A6D28400AAB465 /* ExchangeRatesError.swift */; };
 		757241F627A760B1001867F2 /* ExchangeRatesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757241F527A760B1001867F2 /* ExchangeRatesDetailViewController.swift */; };
 		75743A8B27A589290085DFAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75743A8A27A589290085DFAE /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751BFECD2B62BB5400BB94C8 /* DGCharts in Frameworks */,
 				1C7D38EEB79125604FBD4C96 /* Pods_KursyWalut.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,13 +188,15 @@
 				75743A8327A589290085DFAE /* Sources */,
 				75743A8427A589290085DFAE /* Frameworks */,
 				75743A8527A589290085DFAE /* Resources */,
-				51A425B83265AA5671B0FA62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = KursyWalut;
+			packageProductDependencies = (
+				751BFECC2B62BB5400BB94C8 /* DGCharts */,
+			);
 			productName = KursyWalut;
 			productReference = 75743A8727A589290085DFAE /* KursyWalut.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +225,9 @@
 				Base,
 			);
 			mainGroup = 75743A7E27A589290085DFAE;
+			packageReferences = (
+				751BFECB2B62BB5400BB94C8 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 75743A8827A589290085DFAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -244,23 +251,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		51A425B83265AA5671B0FA62 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KursyWalut/Pods-KursyWalut-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KursyWalut/Pods-KursyWalut-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KursyWalut/Pods-KursyWalut-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		75161E9327AB43950008457C /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -451,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -543,6 +533,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		751BFECB2B62BB5400BB94C8 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		751BFECC2B62BB5400BB94C8 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 751BFECB2B62BB5400BB94C8 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 75743A7F27A589290085DFAE /* Project object */;
 }

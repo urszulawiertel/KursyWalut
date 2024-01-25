@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Charts
+import DGCharts
 
 struct ExchangeRatesDetailViewModel {
     let apiController: ExchangeRatesAPIControlling

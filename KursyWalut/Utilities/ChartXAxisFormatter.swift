@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import Charts
+import DGCharts
 
-public class ChartXAxisFormatter: NSObject, IAxisValueFormatter {
+public class ChartXAxisFormatter: NSObject, AxisValueFormatter {
     private let dateFormatter = DateFormatter()
 
     override init() {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct AverageExchangeRatesTableViewCellViewModel {
+struct AverageExchangeRatesCellViewModel {
     let dateFormatter: DateConverting
     let rate: Rate?
     let date: Date?
@@ -18,14 +18,14 @@ struct AverageExchangeRatesTableViewCellViewModel {
     }
 }
 
-class AverageExchangeRatesTableViewCell: UITableViewCell {
+class AverageExchangeRatesCell: UITableViewCell {
 
     @IBOutlet private weak var currencyLabel: UILabel!
     @IBOutlet private weak var currencyCodeLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var averageExchangeRateLabel: UILabel!
 
-    var viewModel: AverageExchangeRatesTableViewCellViewModel!
+    var viewModel: AverageExchangeRatesCellViewModel!
 
     func configureCell() {
         currencyLabel.text = viewModel.rate?.currency

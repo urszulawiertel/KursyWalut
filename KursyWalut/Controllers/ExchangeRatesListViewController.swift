@@ -83,15 +83,15 @@ extension ExchangeRatesListViewController: UITableViewDataSource {
         let effectiveDate = exchangeRates?[0].effectiveDate
 
         if segmentedControl.selectedSegmentIndex == 2 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BidAskSpreadTableViewCell", for: indexPath) as? BidAskSpreadTableViewCell else { return UITableViewCell() }
-            let tableViewCellViewModel = BidAskSpreadTableViewCellViewModel(dateFormatter: dateFormatter, rate: item, date: effectiveDate)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BidAskSpreadTableViewCell", for: indexPath) as? BidAskSpreadCell else { return UITableViewCell() }
+            let tableViewCellViewModel = BidAskSpreadCellViewModel(dateFormatter: dateFormatter, rate: item, date: effectiveDate)
             cell.viewModel = tableViewCellViewModel
 
             cell.configureCell()
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AverageExchangeRatesTableViewCell", for: indexPath) as? AverageExchangeRatesTableViewCell else { return UITableViewCell() }
-            let tableViewCellViewModel = AverageExchangeRatesTableViewCellViewModel(dateFormatter: dateFormatter, rate: item, date: effectiveDate)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AverageExchangeRatesTableViewCell", for: indexPath) as? AverageExchangeRatesCell else { return UITableViewCell() }
+            let tableViewCellViewModel = AverageExchangeRatesCellViewModel(dateFormatter: dateFormatter, rate: item, date: effectiveDate)
             cell.viewModel = tableViewCellViewModel
 
             cell.configureCell()

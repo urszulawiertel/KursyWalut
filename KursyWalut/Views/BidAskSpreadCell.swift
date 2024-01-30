@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct BidAskSpreadTableViewCellViewModel {
+struct BidAskSpreadCellViewModel {
     let dateFormatter: DateConverting
     let rate: Rate?
     let date: Date?
@@ -18,7 +18,7 @@ struct BidAskSpreadTableViewCellViewModel {
     }
 }
 
-class BidAskSpreadTableViewCell: UITableViewCell {
+class BidAskSpreadCell: UITableViewCell {
 
     @IBOutlet private weak var currencyLabel: UILabel!
     @IBOutlet private weak var currencyCodeLabel: UILabel!
@@ -26,7 +26,7 @@ class BidAskSpreadTableViewCell: UITableViewCell {
     @IBOutlet private weak var bidPriceLabel: UILabel!
     @IBOutlet private weak var askPriceLabel: UILabel!
 
-    var viewModel: BidAskSpreadTableViewCellViewModel!
+    var viewModel: BidAskSpreadCellViewModel!
 
     func configureCell() {
         currencyLabel.text = viewModel.rate?.currency

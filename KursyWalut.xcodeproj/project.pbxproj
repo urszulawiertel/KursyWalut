@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C7D38EEB79125604FBD4C96 /* Pods_KursyWalut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D55E5C5EF19CDC90AC6D27 /* Pods_KursyWalut.framework */; };
+		750826FC2B6986FC004D4317 /* ExchangeRatesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750826FB2B6986FC004D4317 /* ExchangeRatesDetailViewModel.swift */; };
 		751BFECD2B62BB5400BB94C8 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 751BFECC2B62BB5400BB94C8 /* DGCharts */; };
 		756AA61F27A6D28400AAB465 /* ExchangeRatesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AA61E27A6D28400AAB465 /* ExchangeRatesError.swift */; };
 		757241F627A760B1001867F2 /* ExchangeRatesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757241F527A760B1001867F2 /* ExchangeRatesDetailViewController.swift */; };
@@ -24,11 +25,16 @@
 		757DCF4627AC5C880014D351 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757DCF4527AC5C880014D351 /* DateConverter.swift */; };
 		758114F127A5D3ED00B7DB77 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758114F027A5D3ED00B7DB77 /* ExchangeRate.swift */; };
 		758114F427A5D81800B7DB77 /* ExchangeRatesAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758114F327A5D81800B7DB77 /* ExchangeRatesAPIController.swift */; };
+		75AB55192B697E2700593FBC /* AverageExchangeRatesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB55182B697E2700593FBC /* AverageExchangeRatesCellViewModel.swift */; };
+		75AB551B2B697E5F00593FBC /* BidAskSpreadCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB551A2B697E5F00593FBC /* BidAskSpreadCellViewModel.swift */; };
+		75EA04B02B766092005EBAA8 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA04AF2B766092005EBAA8 /* UITableView.swift */; };
+		75EA04B22B767396005EBAA8 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA04B12B767396005EBAA8 /* UIStoryboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07D55E5C5EF19CDC90AC6D27 /* Pods_KursyWalut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KursyWalut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D2E91DEEDB79F89D1DF371 /* Pods-KursyWalut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KursyWalut.release.xcconfig"; path = "Target Support Files/Pods-KursyWalut/Pods-KursyWalut.release.xcconfig"; sourceTree = "<group>"; };
+		750826FB2B6986FC004D4317 /* ExchangeRatesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesDetailViewModel.swift; sourceTree = "<group>"; };
 		756AA61E27A6D28400AAB465 /* ExchangeRatesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesError.swift; sourceTree = "<group>"; };
 		757241F527A760B1001867F2 /* ExchangeRatesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesDetailViewController.swift; sourceTree = "<group>"; };
 		75743A8727A589290085DFAE /* KursyWalut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KursyWalut.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +52,10 @@
 		757DCF4527AC5C880014D351 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		758114F027A5D3ED00B7DB77 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		758114F327A5D81800B7DB77 /* ExchangeRatesAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesAPIController.swift; sourceTree = "<group>"; };
+		75AB55182B697E2700593FBC /* AverageExchangeRatesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageExchangeRatesCellViewModel.swift; sourceTree = "<group>"; };
+		75AB551A2B697E5F00593FBC /* BidAskSpreadCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidAskSpreadCellViewModel.swift; sourceTree = "<group>"; };
+		75EA04AF2B766092005EBAA8 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		75EA04B12B767396005EBAA8 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		9A227C517F2DF76F7D0D2419 /* Pods-KursyWalut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KursyWalut.debug.xcconfig"; path = "Target Support Files/Pods-KursyWalut/Pods-KursyWalut.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +101,8 @@
 		75743A8927A589290085DFAE /* KursyWalut */ = {
 			isa = PBXGroup;
 			children = (
+				75EA04AE2B765CF8005EBAA8 /* Extensions */,
+				75AB55172B697E0C00593FBC /* ViewModels */,
 				758114EE27A5CEE000B7DB77 /* AppDelegate */,
 				758114F227A5D7C400B7DB77 /* APIService */,
 				758114EB27A5C7DB00B7DB77 /* Models */,
@@ -165,6 +177,25 @@
 				756AA61E27A6D28400AAB465 /* ExchangeRatesError.swift */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		75AB55172B697E0C00593FBC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				75AB55182B697E2700593FBC /* AverageExchangeRatesCellViewModel.swift */,
+				75AB551A2B697E5F00593FBC /* BidAskSpreadCellViewModel.swift */,
+				750826FB2B6986FC004D4317 /* ExchangeRatesDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		75EA04AE2B765CF8005EBAA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				75EA04AF2B766092005EBAA8 /* UITableView.swift */,
+				75EA04B12B767396005EBAA8 /* UIStoryboard.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CB7075951D0CB559DB98CCD1 /* Pods */ = {
@@ -302,6 +333,8 @@
 				758114F127A5D3ED00B7DB77 /* ExchangeRate.swift in Sources */,
 				75743A9F27A592D80085DFAE /* AverageExchangeRatesCell.swift in Sources */,
 				75743A8F27A589290085DFAE /* ExchangeRatesListViewController.swift in Sources */,
+				75AB551B2B697E5F00593FBC /* BidAskSpreadCellViewModel.swift in Sources */,
+				750826FC2B6986FC004D4317 /* ExchangeRatesDetailViewModel.swift in Sources */,
 				757DCF4427AC50410014D351 /* ChartXAxisFormatter.swift in Sources */,
 				75743A8B27A589290085DFAE /* AppDelegate.swift in Sources */,
 				756AA61F27A6D28400AAB465 /* ExchangeRatesError.swift in Sources */,
@@ -309,6 +342,9 @@
 				757241F627A760B1001867F2 /* ExchangeRatesDetailViewController.swift in Sources */,
 				757DCF4627AC5C880014D351 /* DateConverter.swift in Sources */,
 				7576672A27A851D400EBC3CB /* BidAskSpreadCell.swift in Sources */,
+				75EA04B22B767396005EBAA8 /* UIStoryboard.swift in Sources */,
+				75AB55192B697E2700593FBC /* AverageExchangeRatesCellViewModel.swift in Sources */,
+				75EA04B02B766092005EBAA8 /* UITableView.swift in Sources */,
 				7578D97327AAC01700974275 /* HistoricalExchangeRate.swift in Sources */,
 				75743A8D27A589290085DFAE /* SceneDelegate.swift in Sources */,
 			);

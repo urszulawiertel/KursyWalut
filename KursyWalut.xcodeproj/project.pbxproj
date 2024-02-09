@@ -101,15 +101,15 @@
 		75743A8927A589290085DFAE /* KursyWalut */ = {
 			isa = PBXGroup;
 			children = (
-				75EA04AE2B765CF8005EBAA8 /* Extensions */,
-				75AB55172B697E0C00593FBC /* ViewModels */,
-				758114EE27A5CEE000B7DB77 /* AppDelegate */,
 				758114F227A5D7C400B7DB77 /* APIService */,
-				758114EB27A5C7DB00B7DB77 /* Models */,
+				758114EE27A5CEE000B7DB77 /* AppDelegate */,
 				758114ED27A5CEB100B7DB77 /* Controllers */,
-				758114EC27A5CE9100B7DB77 /* Views */,
-				757DCF4227AC4FE70014D351 /* Utilities */,
+				75EA04AE2B765CF8005EBAA8 /* Extensions */,
+				758114EB27A5C7DB00B7DB77 /* Models */,
 				758114EF27A5CF0900B7DB77 /* Resources */,
+				757DCF4227AC4FE70014D351 /* Utilities */,
+				75AB55172B697E0C00593FBC /* ViewModels */,
+				758114EC27A5CE9100B7DB77 /* Views */,
 			);
 			path = KursyWalut;
 			sourceTree = "<group>";

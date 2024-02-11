@@ -23,15 +23,6 @@ struct ExchangeRatesAPIController: ExchangeRatesAPIControlling {
         }
     }
 
-    private func decode<T: Decodable>(model: T.Type, data: Data) throws -> T {
-        let decoder = JSONDecoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
-        let decodedData = try decoder.decode(model.self, from: data)
-        return decodedData
-    }
-
     func fetchExchangeRates(forType type: String, completionHandler: @escaping ((Result<ExchangeRateNBP, ExchangeRatesError>) -> Void)) {
 
         var components = Constants.components
@@ -73,7 +64,7 @@ struct ExchangeRatesAPIController: ExchangeRatesAPIControlling {
             }
 
             do {
-                let decoded = try decode(model: model.self, data: data)
+                let decoded = try data.decode(model.self)
                 completionHandler(.success(decoded))
 
             } catch {

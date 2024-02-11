@@ -35,11 +35,18 @@ struct DateConverter: DateConverting {
     }
 }
 
+struct DateFormat {
+    static let defaultDateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    static let dayMonthYearDateFormat = "yyyy-MM-dd"
+    static let dayMonthDateFormat = "d/MM"
+}
+
 extension DateFormatter {
+
     /// Returns the date in the format received from the API request.
     static var defaultDateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.dateFormat = DateFormat.defaultDateFormat
         return dateFormatter
     }
 
@@ -47,7 +54,7 @@ extension DateFormatter {
     /// Example: 2022-02-07.
     static var dayMonthYearDateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = DateFormat.dayMonthYearDateFormat
         return dateFormatter
     }
 }

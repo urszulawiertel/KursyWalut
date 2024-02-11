@@ -12,7 +12,7 @@ extension Data {
     func decode<T: Decodable>(_: T.Type) throws -> T {
         let decoder = JSONDecoder()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = DateFormat.dayMonthYearDateFormat
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return try decoder.decode(T.self, from: self)
     }

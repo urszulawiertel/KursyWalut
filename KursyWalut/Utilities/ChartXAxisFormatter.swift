@@ -13,7 +13,7 @@ public class ChartXAxisFormatter: NSObject, AxisValueFormatter {
 
     override init() {
         super.init()
-        dateFormatter.dateFormat = "d/MM"
+        dateFormatter.dateFormat = DateFormat.dayMonthDateFormat
     }
 
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {

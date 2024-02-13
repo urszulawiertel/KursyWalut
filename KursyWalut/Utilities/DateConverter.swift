@@ -44,17 +44,17 @@ struct DateFormat {
 extension DateFormatter {
 
     /// Returns the date in the format received from the API request.
-    static var defaultDateFormatter: DateFormatter {
+    static let defaultDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormat.defaultDateFormat
         return dateFormatter
-    }
+    }()
 
     /// Returns a date in the following format:  the 4-digit year, numeric month and numeric day of the month.
     /// Example: 2022-02-07.
-    static var dayMonthYearDateFormatter: DateFormatter {
+    static let dayMonthYearDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormat.dayMonthYearDateFormat
         return dateFormatter
-    }
+    }()
 }
